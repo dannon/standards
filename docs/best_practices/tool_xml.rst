@@ -357,9 +357,23 @@ The help tag should be started and finished by a CDATA tag.
 
 .. code:: xml
 
-    <![CDATA[ your lines of restructuredText here ]]>
+    <help format="markdown"><![CDATA[ your lines of Markdown here ]]></help>
 
 `http://en.wikipedia.org/wiki/CDATA <http://en.wikipedia.org/wiki/CDATA>`__
+
+Tool help can be written in Markdown or in reStructuredText. Markdown is
+preferred for new tools. It requires ``format="markdown"`` on the help tag.
+Galaxy supports this from release 24.2, so give the tool a profile of 24.2 or
+later. Without the ``format`` attribute the help is read as reStructuredText:
+
+.. code:: xml
+
+    <help><![CDATA[ your lines of reStructuredText here ]]></help>
+
+reStructuredText help remains valid, and existing tools do not need to be
+converted. When you do convert a tool, convert the whole help section; do not
+mix the two syntaxes. Tools that include images in their help should stay with
+reStructuredText for now (see `Including Images`_).
 
 Inside the help tag you should describe the functionality of your tool.
 The help tag is to the ``help=""`` attribute as a man page is to the ``--help``
@@ -377,6 +391,10 @@ might be nice for those images to be included in the Galaxy tool documentation!
 Images should be placed in a subdirectory, ``./static/images/``, and referenced
 in your tool help as ``.. image:: my-picture.png``. This can be seen in the
 IUC's wrappers, such as the one for the bedtools `slop`_ command.
+
+This works in reStructuredText help only. Galaxy rewrites the paths of
+``.. image::`` directives so that they point at the installed tool's images,
+and it does not do this for Markdown help.
 
 Generating Indices
 ------------------

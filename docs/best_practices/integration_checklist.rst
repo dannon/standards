@@ -32,7 +32,7 @@ Creating the Tool Wrapper (XML File)
 - Supply at least one `Input <https://docs.galaxyproject.org/en/latest/dev/schema.html#tool-inputs>`__ with a description of parameters. Add `Validators <https://docs.galaxyproject.org/en/latest/dev/schema.html#tool-inputs-param-validator>`__ to user input fields.
 - Supply at least one `Output <https://docs.galaxyproject.org/en/latest/dev/schema.html#tool-outputs>`__ with a description of parameters. For Output that is optionally created, use `Filters <https://docs.galaxyproject.org/en/master/dev/schema.html#tool-outputs-data-filter>`__.
 - Supply at least one `Test <http://galaxy-iuc-standards.readthedocs.io/en/latest/best_practices/tool_xml.html#tests>`__. The primary output is a good choice for testing. Don't forget the use of ``sim_size`` if variable data is included.
-- Add a `Help <http://galaxy-iuc-standards.readthedocs.io/en/latest/best_practices/tool_xml.html#help-tag>`__ section written in `valid reStructuredText <http://rst.ninjs.org>`__ within CDATA tags.
+- Add a `Help <http://galaxy-iuc-standards.readthedocs.io/en/latest/best_practices/tool_xml.html#help-tag>`__ section within CDATA tags, written in Markdown (``format="markdown"``, preferred for new tools) or in `valid reStructuredText <http://rst.ninjs.org>`__.
 - Add a `Citation <https://docs.galaxyproject.org/en/latest/dev/schema.html#tool-citations>`__ section with a citation for the tool, preferably a `DOI <https://www.doi.org/>`__.
 - If your tool uses `built-in data <https://galaxyproject.org/admin/data-integration>`__:
     - Provide the comment-only ``tool-data/data_table_name.loc.sample`` file
