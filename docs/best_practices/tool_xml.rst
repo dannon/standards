@@ -103,6 +103,21 @@ from the latest stable release, unless a new Galaxy feature is required for
 the tool to run successfully. A list of profile changes is maintained in the
 `Galaxy schema docs <https://docs.galaxyproject.org/en/latest/dev/schema.html#tool-profile>`__.
 
+A newer profile is not better in itself. Galaxy refuses to load a tool whose
+profile is newer than the server, so do not raise the profile beyond what the
+major public servers run unless the tool needs the newer behavior.
+
+In a suite, define the profile once as a token in the shared macro file and
+use it in every tool, so the whole suite moves together:
+
+.. code:: xml
+
+    <token name="@PROFILE@">25.1</token>
+
+.. code:: xml
+
+    <tool id="..." name="..." version="@TOOL_VERSION@+galaxy@VERSION_SUFFIX@" profile="@PROFILE@">
+
 Tool Descriptions
 -----------------
 
