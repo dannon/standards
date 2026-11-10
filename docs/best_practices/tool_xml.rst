@@ -349,6 +349,13 @@ so:
 This will automatically fail the tool if the exit code is non-zero, or if the
 phrases ``error:`` or ``exception:`` appear in STDERR.
 
+Use ``detect_errors="exit_code"`` instead when the phrase check would fail
+jobs that succeeded. The common cases are tools that print ``error:`` or
+``exception:`` on standard error during normal operation, and tools whose
+purpose is to report errors found in their input. Say why in a comment above
+the ``<command>`` tag, and make sure the tool really does return a non-zero
+exit code when it fails.
+
 
 Help tag
 --------
