@@ -103,9 +103,11 @@ from the latest stable release, unless a new Galaxy feature is required for
 the tool to run successfully. A list of profile changes is maintained in the
 `Galaxy schema docs <https://docs.galaxyproject.org/en/latest/dev/schema.html#tool-profile>`__.
 
-A newer profile is not better in itself. Galaxy refuses to load a tool whose
-profile is newer than the server, so do not raise the profile beyond what the
-major public servers run unless the tool needs the newer behavior.
+A newer profile is usually the better choice, since newer profiles turn on
+stricter and safer defaults. The limit is what servers can load: Galaxy refuses
+to load a tool whose profile is newer than the server, so do not raise the
+profile beyond what the major public servers run unless the tool needs the
+newer behavior.
 
 In a suite, define the profile once as a token in the shared macro file and
 use it in every tool, so the whole suite moves together:
