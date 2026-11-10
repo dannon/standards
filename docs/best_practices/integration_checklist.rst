@@ -21,7 +21,7 @@ Creating the Tool Wrapper (XML File)
 - Review the `IUC's Best Practices for Tools <http://galaxy-iuc-standards.readthedocs.io/en/latest/best_practices/tool_xml.html>`__.
 - Consult the `Galaxy Tool XML File schema <https://docs.galaxyproject.org/en/master/dev/schema.html>`__.
 - Create your tool wrapper with a command like ``planemo tool_init --id 'tool_name' --name 'Tool description'``. 
-- Alternatively, you could copy and modify `an existing IUC wrapper <https://github.com/galaxyproject/tools-iuc/tree/master/tools>`__.
+- Alternatively, you could copy and modify `an existing IUC wrapper <https://github.com/galaxyproject/tools-iuc/tree/main/tools>`__.
 - Give your tool an appropriate ``ID`` and ``name`` by consulting the `IUC's Best Practices for Tools <http://galaxy-iuc-standards.readthedocs.io/en/latest/best_practices/tool_xml.html>`__. The ``ID`` is usually the same as the name of the tool XML file and directory.
 - Define a `Tool Version <http://galaxy-iuc-standards.readthedocs.io/en/latest/best_practices/tool_xml.html#tool-versions>`__ for the wrapper. If it is the first wrapper, it is recommended to use the same version as the tool in the requirement.
 - Add a short tool `Description <http://galaxy-iuc-standards.readthedocs.io/en/latest/best_practices/tool_xml.html#tool-descriptions>`__.

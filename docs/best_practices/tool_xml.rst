@@ -519,7 +519,7 @@ Coding Style
 .. _citations: https://docs.galaxyproject.org/en/latest/dev/schema.html#tool-citations
 .. _creator: https://docs.galaxyproject.org/en/latest/dev/schema.html#tool-creator
 .. _bedtools: http://bedtools.readthedocs.org/en/latest/content/tools/slop.html
-.. _slop: https://github.com/galaxyproject/tools-iuc/blob/master/tools/bedtools/slopBed.xml
+.. _slop: https://github.com/galaxyproject/tools-iuc/blob/main/tools/bedtools/slopBed.xml
 .. _Galaxy repository: https://github.com/galaxyproject/galaxy
 .. _PEP8: https://www.python.org/dev/peps/pep-0008/
 .. _smarkets: https://github.com/PyCQA/flake8-import-order/blob/master/tests/test_cases/complete_smarkets.py
