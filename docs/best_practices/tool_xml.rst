@@ -340,6 +340,10 @@ escaping (``&amp;``).
 All Cheetah variables for text parameters, input and output files must be
 single-quoted, e.g. ``'${var_name}'``.
 
+Shell variables are written differently. Escape the dollar sign so that Cheetah
+leaves the variable alone, and put it in double quotes, e.g.
+``--threads "\${GALAXY_SLOTS:-1}"``.
+
 For composite datatypes the recommended attribute to access the associated
 directory name differs for inputs (e.g. ``$input.extra_files_path``) versus
 outputs (e.g. ``$output.files_path``). This difference is historical, and
