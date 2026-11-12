@@ -406,6 +406,16 @@ converted. When you do convert a tool, convert the whole help section; do not
 mix the two syntaxes. Tools that include images in their help should stay with
 reStructuredText for now (see `Including Images`_).
 
+Two things to know when writing Markdown help:
+
+- Start the help text in the first column. Galaxy does not remove the
+  indentation that lines the text up with the surrounding XML, and Markdown
+  renders text indented by four or more spaces as a code block.
+- ``planemo lint`` checks Markdown help correctly only with galaxy-tool-util
+  26.1 or later. Older versions check every help section as reStructuredText,
+  so valid Markdown can fail with ``HelpInvalidRST``; a pipe table is the usual
+  case. Until the linter you use is new enough, write tables as lists.
+
 Inside the help tag you should describe the functionality of your tool.
 The help tag is to the ``help=""`` attribute as a man page is to the ``--help``
 flag. The help tag should cover the tools functionality, use cases, and even
