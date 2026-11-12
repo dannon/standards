@@ -109,7 +109,7 @@ to load a tool whose profile is newer than the server, so do not raise the
 profile beyond what the major public servers run unless the tool needs the
 newer behavior.
 
-In a suite, define the profile once as a token in the shared macro file and
+In a suite, define the profile once as a `token <https://planemo.readthedocs.io/en/latest/writing_advanced.html#macro-tokens>`__ in the shared macro file and
 use it in every tool, so the whole suite moves together:
 
 .. code:: xml
