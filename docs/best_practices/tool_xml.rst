@@ -373,11 +373,19 @@ jobs that succeeded. The common cases are tools that print ``error:`` or
 ``exception:`` to standard output or standard error during normal operation,
 and tools whose purpose is to report errors found in their input. Say why in a comment above
 the ``<command>`` tag, and make sure the tool really does return a non-zero
-exit code when it fails.
+exit code when it fails. Checking only the exit code is also what Galaxy does
+when ``detect_errors`` is not set and the tool has a profile of 16.04 or later,
+so set the attribute explicitly either way.
 
 
 Help tag
 --------
+
+Tool help can be written in Markdown or in reStructuredText. Markdown is
+preferred for new tools. It requires ``format="markdown"`` on the help tag, and
+a Galaxy server of release 24.2 or later to display it. The tool profile does
+not switch Markdown help on, but a profile of 24.2 or later means that only
+servers able to display the help will load the tool.
 
 The help tag should be started and finished by a CDATA tag.
 
@@ -387,10 +395,7 @@ The help tag should be started and finished by a CDATA tag.
 
 `http://en.wikipedia.org/wiki/CDATA <http://en.wikipedia.org/wiki/CDATA>`__
 
-Tool help can be written in Markdown or in reStructuredText. Markdown is
-preferred for new tools. It requires ``format="markdown"`` on the help tag.
-Galaxy supports this from release 24.2, so give the tool a profile of 24.2 or
-later. Without the ``format`` attribute the help is read as reStructuredText:
+Without the ``format`` attribute the help is read as reStructuredText:
 
 .. code:: xml
 
